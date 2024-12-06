@@ -1,21 +1,20 @@
 package Materia.Queues;
 
 import java.util.NoSuchElementException;
+import Materia.Models.NodeGeneric;
 
-import Materia.Models.Node;
+public class QueueGeneric<T> {
+    private NodeGeneric<T> front;
+    private NodeGeneric<T> rear;
 
-public class Queue {
-    private Node front;
-    private Node rear;
-
-    public Queue() {
+    public QueueGeneric() {
         this.front = null;
         this.rear = null;
     }
 
-    // Metodo para encolar nodos
-    public void enqueue(int value) {
-        Node newNode = new Node(value);
+    // Método para encolar nodos
+    public void enqueue(T value) {
+        NodeGeneric<T> newNode = new NodeGeneric<>(value);
         if (isEmpty()) {
             front = newNode;
             rear = newNode;
@@ -25,34 +24,36 @@ public class Queue {
         }
     }
 
-    // Desencolar
-    public Node dequeue() {
+    // Método para desencolar nodos
+    public T dequeue() {
         if (isEmpty()) {
-            throw new NoSuchElementException("La cola esta vacia");
+            throw new NoSuchElementException("La cola está vacía");
         }
-        Node node = front;
+        T value = front.getValue();
         front = front.getNext();
         if (front == null) {
             rear = null;
         }
-        return node;
+        return value;
     }
 
-    // Devuelve
-    public Node peek() {
+    // Devuelve el primer elemento sin eliminarlo
+    public T peek() {
         if (isEmpty()) {
-            throw new NoSuchElementException();
+            throw new NoSuchElementException("La cola está vacía");
         }
-        return front;
+        return front.getValue();
     }
 
+    // Verifica si la cola está vacía
     public boolean isEmpty() {
         return front == null;
     }
 
+    // Obtiene el tamaño de la cola
     public int getSize() {
         int size = 0;
-        Node current = front;
+        NodeGeneric<T> current = front;
         while (current != null) {
             size++;
             current = current.getNext();
@@ -60,12 +61,12 @@ public class Queue {
         return size;
     }
 
+    // Imprime los valores de la cola
     public void printQueue() {
-        Node current = rear;
+        NodeGeneric<T> current = front;
         while (current != null) {
             System.out.println(current.getValue());
             current = current.getNext();
         }
     }
-
 }
