@@ -6,7 +6,7 @@ public class NodeGeneric<T> {
 
     public NodeGeneric(T value) {
         this.value = value;
-        //this.next = next;
+        this.next = null;
     }
 
     public T getValue() {

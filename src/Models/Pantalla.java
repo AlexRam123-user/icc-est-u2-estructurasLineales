@@ -1,4 +1,4 @@
-package Materia.Modelos;
+package Models;
 
 public class Pantalla {
     private int id;
@@ -37,7 +37,4 @@ public class Pantalla {
     public void setRuta(String ruta) {
         this.ruta = ruta;
     }
-
-    
-
 }

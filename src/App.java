@@ -1,15 +1,16 @@
-import Materia.Modelos.Pantalla;
+import Models.Pantalla;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
 import Materia.Stacks.Stack;
 import Materia.Stacks.StackGeneric;
+
 
 public class App {
     public static void main(String[] args) throws Exception {
         // runStack();
         // runStackGeneric();
         // runQueue();
-        runQueueGeneric();
+        //runQueueGeneric();
     }
 
     public static void runStack() {
@@ -75,10 +76,10 @@ public class App {
         cola.enqueue(new Pantalla(2, "Menu Page", "/home/menu"));
         cola.enqueue(new Pantalla(3, "Settings Page", "/home/settings"));
 
-        System.out.println("Primera pantalla: " + cola.peek().getNombre());
-        System.out.println("Desencolar: " + cola.dequeue().getNombre());
-        System.out.println("Desencolar: " + cola.dequeue().getNombre());
-        System.out.println("Primera pantalla después: " + cola.peek().getNombre());
+        System.out.println("Primera pantalla: " + cola.peek().getRuta());
+        System.out.println("Desencolar: " + cola.dequeue().getRuta());
+        System.out.println("Desencolar: " + cola.dequeue().getRuta());
+        System.out.println("Primera pantalla después: " + cola.peek().getRuta());
 
         System.out.println("Tamaño de la cola: " + cola.getSize());
         cola.printQueue();
