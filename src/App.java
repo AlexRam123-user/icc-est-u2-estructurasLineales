@@ -1,4 +1,10 @@
 import Models.Pantalla;
+import Views.ConsoleView;
+
+import java.util.Scanner;
+
+import Controllers.ContactManager;
+import Controllers.MenuController;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
 import Materia.Stacks.Stack;
@@ -11,6 +17,15 @@ public class App {
         // runStackGeneric();
         // runQueue();
         //runQueueGeneric();
+        Scanner scanner = new Scanner(System.in);
+        ConsoleView consoleView = new ConsoleView(scanner);
+        ContactManager contactManager = new ContactManager();
+        MenuController menuController = new MenuController(contactManager, consoleView);
+
+        // Ejecutar el menú principal
+        menuController.showMenu();
+
+        scanner.close();
     }
 
     public static void runStack() {

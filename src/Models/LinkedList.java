@@ -12,7 +12,7 @@ public class LinkedList<T> {
         } else {
             NodeGeneric<T> current = head;
             while (current.getNext() != null) {
-                current.getNext();
+                current = current.getNext();
             }
             current.setNext(new NodeGeneric<>(value));
         }
