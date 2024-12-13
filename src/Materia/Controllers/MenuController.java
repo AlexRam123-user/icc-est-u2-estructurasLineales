@@ -1,7 +1,7 @@
-package Controllers;
+package Materia.Controllers;
 
-import Models.Contact;
-import Views.ConsoleView;
+import Materia.Models.Contact;
+import Materia.Views.ConsoleView;
 
 public class MenuController {
     private ContactManager contactManager;

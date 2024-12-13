@@ -2,7 +2,7 @@ package Materia.Stacks;
 
 import java.util.EmptyStackException;
 
-import Materia.Models.Node;
+import Materia.Nodes.Node;
 
 public class Stack {
     private Node top;
@@ -43,7 +43,7 @@ public class Stack {
     public void printStack() {
         Node current = top;
         while (current != null) {
-            System.out.println(current.getValue());
+            System.out.print(current.getValue() + " -> ");
             current = current.getNext();
         }
     }

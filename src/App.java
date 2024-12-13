@@ -1,10 +1,12 @@
-import Models.Pantalla;
-import Views.ConsoleView;
+import Materia.Models.Pantalla;
+//import Materia.Views.ConsoleView;
 
 import java.util.Scanner;
 
-import Controllers.ContactManager;
-import Controllers.MenuController;
+import Ejercicio_01_Sign.SignValidator;
+import Ejercicio_02_Sorting.StackSorter;
+//import Materia.Controllers.ContactManager;
+//import Materia.Controllers.MenuController;
 import Materia.Queues.Queue;
 import Materia.Queues.QueueGeneric;
 import Materia.Stacks.Stack;
@@ -18,13 +20,51 @@ public class App {
         // runQueue();
         //runQueueGeneric();
         Scanner scanner = new Scanner(System.in);
+        /* 
+        
         ConsoleView consoleView = new ConsoleView(scanner);
         ContactManager contactManager = new ContactManager();
         MenuController menuController = new MenuController(contactManager, consoleView);
 
-        // Ejecutar el menú principal
         menuController.showMenu();
 
+        scanner.close();
+        */
+
+        System.out.println("---MENU---");
+        System.out.println("\n1. Validar simbolos");
+        System.out.println("2. Ordenar Stack");
+        System.out.print("Seleccione el algoritmo que desea ejecutar: ");
+        int respuesta = scanner.nextInt();
+        scanner.nextLine();
+        if(respuesta == 1){
+            SignValidator validar = new SignValidator();
+            System.out.print("Ingrese un string con los símbolos a validar: ");
+            String input = scanner.nextLine();
+            boolean esValido = validar.isValid(input);
+            System.out.println("Si esta bien true y si no false");
+            System.out.println("Resultado: " + esValido);
+        }else if(respuesta == 2){
+            StackSorter ordenar = new StackSorter();
+            Stack stack = new Stack();
+            
+            System.out.print("Ingrese la cantidad de elementos del stack: ");
+            int cantidad = scanner.nextInt();
+            for (int i = 0; i < cantidad; i++) {
+                System.out.print("Elemento " + (i + 1) + ": ");
+                stack.push(scanner.nextInt());
+            }
+
+            System.out.println("Stack original:");
+            stack.printStack();
+
+            System.out.println();
+            
+            ordenar.sortStack(stack);
+
+            System.out.println("Stack ordenado:");
+            stack.printStack();
+        }
         scanner.close();
     }
 

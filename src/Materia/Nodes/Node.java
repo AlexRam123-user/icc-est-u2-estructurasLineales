@@ -1,4 +1,4 @@
-package Materia.Models;
+package Materia.Nodes;
 
 public class Node {
     private int value;

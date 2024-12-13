@@ -1,14 +1,12 @@
-package Models;
+package Materia.Models;
 
-
-
-public class Contact<T,U> {
+public class Contact<T, U> {
     private T name;
     private U phone;
 
-    public Contact(T name, U phone){
-        this.name=name;
-        this.phone=phone;
+    public Contact(T name, U phone) {
+        this.name = name;
+        this.phone = phone;
     }
 
     public T getName() {

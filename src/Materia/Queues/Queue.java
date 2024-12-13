@@ -2,7 +2,7 @@ package Materia.Queues;
 
 import java.util.NoSuchElementException;
 
-import Materia.Models.Node;
+import Materia.Nodes.Node;
 
 public class Queue {
     private Node front;

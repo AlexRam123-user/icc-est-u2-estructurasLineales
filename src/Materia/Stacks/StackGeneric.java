@@ -2,7 +2,7 @@ package Materia.Stacks;
 
 import java.util.EmptyStackException;
 
-import Materia.Models.NodeGeneric;
+import Materia.Nodes.NodeGeneric;
 
 public class StackGeneric<T> {
     private NodeGeneric<T> top; // Nodo generico
